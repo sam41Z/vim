@@ -17,6 +17,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'slashmili/alchemist.vim'
 Plug 'bignimbus/pop-punk.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'chun-yang/auto-pairs'
 
 call plug#end()
 
