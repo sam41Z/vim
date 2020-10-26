@@ -20,6 +20,7 @@ Plug 'bignimbus/pop-punk.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chun-yang/auto-pairs'
 Plug '907th/vim-auto-save'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -45,3 +46,5 @@ syntax on
 
 " Enables filetype detection, loads ftplugin, and loads indent
 filetype plugin indent on
+
+let g:tex_flavor = 'latex'
