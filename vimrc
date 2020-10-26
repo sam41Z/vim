@@ -19,6 +19,7 @@ Plug 'slashmili/alchemist.vim'
 Plug 'bignimbus/pop-punk.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chun-yang/auto-pairs'
+Plug '907th/vim-auto-save'
 
 call plug#end()
 
@@ -36,3 +37,11 @@ let g:airline_theme = 'pop_punk'
 let g:airline_section_c = '🎸 %F'
 
 let g:airline_powerline_fonts = 1
+
+let g:auto_save = 1  " enable AutoSave on Vim startup
+
+" Enable syntax highlighting
+syntax on
+
+" Enables filetype detection, loads ftplugin, and loads indent
+filetype plugin indent on
