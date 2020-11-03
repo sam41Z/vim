@@ -30,25 +30,23 @@ call plug#end()
 set number
 
 colorscheme pop-punk
+" Enable syntax highlighting
+syntax on
+" Enables filetype detection, loads ftplugin, and loads indent
+filetype plugin indent on
+
 
 " pop-punk ANSI colors for vim terminal
 let g:terminal_ansi_colors = pop_punk#AnsiColors()
 
-" for the airline theme - note the underscore instead of the hyphen
-let g:airline_theme = 'pop_punk'
-
-" just for fun
-let g:airline_section_c = '🎸 %F'
-
-let g:airline_powerline_fonts = 1
-
 let g:auto_save = 1  " enable AutoSave on Vim startup
 
-" Enable syntax highlighting
-syntax on
+" airline  
+let g:airline_theme = 'pop_punk'
+let g:airline_section_c = '🎸 %F'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#ale#enabled = 1
 
-" Enables filetype detection, loads ftplugin, and loads indent
-filetype plugin indent on
 
 let g:tex_flavor = 'latex'
 
@@ -64,3 +62,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_disable_lsp = 1
+let g:ale_sign_error = '😡'
+let g:ale_sign_warning = '😞'
+
