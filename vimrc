@@ -21,6 +21,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'chun-yang/auto-pairs'
 Plug '907th/vim-auto-save'
 Plug 'lervag/vimtex'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -48,3 +49,9 @@ syntax on
 filetype plugin indent on
 
 let g:tex_flavor = 'latex'
+
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'],'typescriptreact': ['prettier', 'eslint'],}
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_disable_lsp = 1
