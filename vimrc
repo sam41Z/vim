@@ -9,7 +9,6 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'	
 Plug 'scrooloose/nerdtree'
-Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
@@ -22,6 +21,9 @@ Plug 'chun-yang/auto-pairs'
 Plug '907th/vim-auto-save'
 Plug 'lervag/vimtex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 call plug#end()
 
@@ -50,10 +52,15 @@ filetype plugin indent on
 
 let g:tex_flavor = 'latex'
 
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint'],'typescriptreact': ['prettier', 'eslint'],}
-" Set this variable to 1 to fix files when you save them.
+" ALE configs
+let g:ale_linters = { 'javascript': ['flow-language-server'],'elixir': ['elixir-ls'],}
+let g:ale_fixers = {
+      \  'javascript': ['prettier', 'eslint'], 
+      \  'typescript': ['prettier', 'eslint'],
+      \  'typescriptreact': ['prettier', 'eslint'],
+      \  'elixir': ['mix_format'],
+      \ }
+
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_disable_lsp = 1
-
-let g:ale_linters = { 'javascript': ['flow-language-server'],}
