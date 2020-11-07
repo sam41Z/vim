@@ -28,6 +28,13 @@ Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 call plug#end()
 
 set number
+set cursorline
+set hlsearch
+set ignorecase
+set incsearch
+set smartcase
+set mouse=a
+set background=dark
 
 colorscheme pop-punk
 " Enable syntax highlighting
@@ -47,6 +54,8 @@ let g:airline_section_c = '🎸 %F'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#ale#enabled = 1
 
+" FZF
+nnoremap <silent> <C-f> :Files<CR>
 
 let g:tex_flavor = 'latex'
 
@@ -57,6 +66,7 @@ let g:ale_fixers = {
       \  'typescript': ['prettier', 'eslint'],
       \  'typescriptreact': ['prettier', 'eslint'],
       \  'elixir': ['mix_format'],
+      \  'scss':['prettier', 'stylelint']
       \ }
 
 let g:ale_fix_on_save = 1
