@@ -18,13 +18,12 @@ Plug 'w0rp/ale'
 Plug 'slashmili/alchemist.vim'
 Plug 'bignimbus/pop-punk.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'chun-yang/auto-pairs'
+" Plug 'chun-yang/auto-pairs'
 Plug '907th/vim-auto-save'
 Plug 'lervag/vimtex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Elixir
 Plug 'elixir-lang/vim-elixir'
-Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 call plug#end()
 
@@ -34,8 +33,10 @@ set hlsearch
 set ignorecase
 set incsearch
 set smartcase
-set mouse=a
+" set mouse=a
 set background=dark
+set clipboard=unnamedplus
+set clipboard=unnamed
 
 colorscheme pop-punk
 " Enable syntax highlighting
@@ -59,6 +60,10 @@ let g:airline#extensions#ale#enabled = 1
 nnoremap <silent> <C-f> :Files<CR>
 
 let g:tex_flavor = 'latex'
+" Coc.nvim
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 
 " ALE configs
 let g:ale_linters = { 'javascript': ['flow-language-server'],'elixir': ['elixir-ls'],}
@@ -70,7 +75,8 @@ let g:ale_fixers = {
       \  'scss':['prettier', 'stylelint']
       \ }
 
-let g:ale_fix_on_save = 1
+nnoremap <silent> <C-l> :ALEFix<CR>
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_disable_lsp = 1
